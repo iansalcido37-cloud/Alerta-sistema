@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRITICAL_SYSTEM_ERROR</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #ff0000;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            margin: 0;
+            font-size: 14px;
+        }
+        .alert {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10%;
+            text-shadow: 0 0 8px #ff0000;
+            animation: blink 1s infinite;
+        }
+        .console {
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+            color: #00ff00;
+        }
+        .line {
+            visibility: hidden;
+            margin-bottom: 5px;
+        }
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="alert">⚠️ ADVERTENCIA: ACCESO NO AUTORIZADO DETECTADO ⚠️</div>
+    
+    <div class="console">
+        <div class="line" id="l1">> Conectando al servidor remoto... OK</div>
+        <div class="line" id="l2">> Descargando registros de autenticación...</div>
+        <div class="line" id="l3">> Extrayendo tokens de sesión activos... [144 detectados]</div>
+        <div class="line" id="l4">> Volcando base de datos local en progreso (84%)...</div>
+        <div class="line" id="l5" style="color:red;">> ERROR CRÍTICO: El sistema ha sido comprometido por completo.</div>
+    </div>
+
+    <script>
+        setTimeout(() => { document.getElementById('l1').style.visibility = 'visible'; }, 1000);
+        setTimeout(() => { document.getElementById('l2').style.visibility = 'visible'; }, 2500);
+        setTimeout(() => { document.getElementById('l3').style.visibility = 'visible'; }, 4000);
+        setTimeout(() => { document.getElementById('l4').style.visibility = 'visible'; }, 5500);
+        setTimeout(() => { document.getElementById('l5').style.visibility = 'visible'; }, 7000);
+    </script>
+
+</body>
+</html>
